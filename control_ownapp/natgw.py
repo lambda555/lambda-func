@@ -129,13 +129,13 @@ def release_allocation_ids(allocation_ids = []):
 def natgw_handler(action):
     print("---NAT Gateway---")
     try:
-        if action == "start":
+        if action == "Start":
             # NATゲートウェイの作成
             nat_gateway_id = start_natgw(public_subnet)
             # ルーティングの作成
             atatch_natgw(nat_gateway_id, private_subnet)
 
-        elif action == "stop":
+        elif action == "Stop":
             # ルーティングの削除
             detach_natgw(private_subnet)
             # NATゲートウェイの削除
@@ -144,9 +144,9 @@ def natgw_handler(action):
             release_allocation_ids(allocation_ids)
 
     except Exception as e:
-        if action == "start":
+        if action == "Start":
             print('> 作成処理に失敗しました')
-        elif action == "stop":
+        elif action == "Stop":
             print('> 削除処理に失敗しました')
         print(e)
         sys.exit('> プログラムを終了します')

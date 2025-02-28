@@ -85,15 +85,15 @@ def delete_alb():
 def alb_handler(action):
     print("---ALB---")
     try:
-        if action == "start":
+        if action == "Start":
             create_alb()
-        elif action == "stop":
+        elif action == "Stop":
             delete_alb()
 
     except Exception as e:
-        if action == "start":
+        if action == "Start":
             print('> 作成処理に失敗しました')
-        elif action == "stop":
+        elif action == "Stop":
             print('> 削除処理に失敗しました')
         print(e)
         sys.exit('> プログラムを終了します')

@@ -13,9 +13,9 @@ def lambda_handler(event, context):
         # アクションを取得する
         action = event["Action"]
 
-        # アクションが start/stop 以外の場合 
-        if not(action in ("start", "stop")):
-            raise Exception('> アクションには \"start\" または \"stop\"を指定してください' + '\n' + action)
+        # アクションが Start/Stop 以外の場合 
+        if not(action in ("Start", "Stop")):
+            raise Exception('> アクションには \"Start\" または \"Stop\"を指定してください' + '\n' + action)
 
         # EC2の起動/停止
         ec2.ec2_handler(action)
